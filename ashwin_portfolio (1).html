@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ashwin K - Electronics Engineer & AI Developer</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+            background: #000;
+            color: #fff;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 999;
+            background: rgba(0, 0, 0, 0.98);
+            backdrop-filter: blur(10px);
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid rgba(255, 23, 68, 0.2);
+        }
+
+        nav h1 {
+            font-size: 24px;
+            font-weight: 900;
+            background: linear-gradient(135deg, #ff1744, #ff6b6b);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        nav a {
+            font-size: 14px;
+            color: #aaa;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #ff1744;
+        }
+
+        .hire-btn {
+            background: #ff1744;
+            color: #fff;
+            padding: 10px 22px;
+            border-radius: 5px;
+            font-weight: 700;
+            font-size: 13px;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(255, 23, 68, 0.3);
+        }
+
+        .hire-btn:hover {
+            background: #ff3859;
+            transform: translateY(-2px);
+        }
+
+        /* Hero Section */
+        #hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 6rem 2rem 3rem;
+            background: linear-gradient(135deg, rgba(15, 15, 15, 1) 0%, rgba(25, 25, 35, 1) 100%);
+        }
+
+        .hero-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            width: 100%;
+        }
+
+        .hero-text h2 {
+            font-size: 56px;
+            font-weight: 900;
+            margin-bottom: 1.2rem;
+            line-height: 1.15;
+            background: linear-gradient(135deg, #fff, #ff1744);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: slideInLeft 0.8s ease-out;
+        }
+
+        .hero-text .tagline {
+            font-size: 14px;
+            color: #ff1744;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 1rem;
+            animation: slideInLeft 0.8s ease-out 0.1s both;
+        }
+
+        .hero-text .subtitle {
+            font-size: 17px;
+            color: #bbb;
+            margin-bottom: 1.8rem;
+            line-height: 1.7;
+            animation: slideInLeft 0.8s ease-out 0.2s both;
+        }
+
+        .cta-group {
+            display: flex;
+            gap: 1.2rem;
+            animation: slideInLeft 0.8s ease-out 0.3s both;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #ff1744, #ff3859);
+            color: #fff;
+            padding: 13px 32px;
+            border-radius: 6px;
+            font-weight: 700;
+            font-size: 15px;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 8px 25px rgba(255, 23, 68, 0.35);
+            transition: all 0.3s;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 35px rgba(255, 23, 68, 0.5);
+        }
+
+        .btn-secondary {
+            border: 2px solid #ff1744;
+            color: #ff1744;
+            padding: 11px 30px;
+            border-radius: 6px;
+            font-weight: 700;
+            background: transparent;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 23, 68, 0.15);
+            transform: translateY(-3px);
+        }
+
+        .hero-image {
+            display: flex;
+            justify-content: center;
+            animation: slideInRight 0.8s ease-out;
+        }
+
+        .hero-image img {
+            width: 100%;
+            max-width: 360px;
+            border-radius: 12px;
+            object-fit: cover;
+            box-shadow: 0 20px 60px rgba(255, 23, 68, 0.25);
+            border: 2px solid rgba(255, 23, 68, 0.3);
+            height: 420px;
+        }
+
+        /* About Section */
+        #about {
+            background: #fff;
+            color: #000;
+            padding: 4rem 2rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        #about h3 {
+            font-size: 48px;
+            font-weight: 900;
+            margin-bottom: 1.5rem;
+        }
+
+        #about p {
+            font-size: 16px;
+            line-height: 1.8;
+            color: #333;
+            margin-bottom: 1.2rem;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .stat-card {
+            background: linear-gradient(135deg, #f5f5f5, #e8e8e8);
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-left: 4px solid #ff1744;
+            transition: all 0.3s;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(255, 23, 68, 0.15);
+        }
+
+        .stat-card h4 {
+            font-size: 36px;
+            font-weight: 900;
+            color: #ff1744;
+            margin-bottom: 0.3rem;
+        }
+
+        .stat-card p {
+            font-size: 13px;
+            color: #666;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-weight: 600;
+            margin: 0;
+        }
+
+        /* Skills Section */
+        #skills {
+            background: #000;
+            padding: 4rem 2rem;
+        }
+
+        #skills h3 {
+            font-size: 48px;
+            font-weight: 900;
+            margin-bottom: 2.5rem;
+            text-align: center;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1.8rem;
+        }
+
+        .skill-card {
+            background: rgba(255, 23, 68, 0.08);
+            border: 1.5px solid rgba(255, 23, 68, 0.3);
+            border-radius: 10px;
+            padding: 1.8rem;
+            transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .skill-card::before {
+            content: '';
+            position: absolute;
+            top: -100%;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 23, 68, 0.1);
+            transition: top 0.3s;
+        }
+
+        .skill-card:hover {
+            border-color: #ff1744;
+            transform: translateY(-8px);
+            box-shadow: 0 15px 40px rgba(255, 23, 68, 0.25);
+        }
+
+        .skill-card:hover::before {
+            top: 0;
+        }
+
+        .skill-card h4 {
+            font-size: 17px;
+            font-weight: 800;
+            margin-bottom: 0.8rem;
+            color: #ff1744;
+            position: relative;
+            z-index: 1;
+        }
+
+        .skill-card p {
+            font-size: 14px;
+            color: #aaa;
+            line-height: 1.6;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Projects Section */
+        #projects {
+            background: #fff;
+            color: #000;
+            padding: 4rem 2rem;
+        }
+
+        #projects h3 {
+            font-size: 48px;
+            font-weight: 900;
+            margin-bottom: 2.5rem;
+            text-align: center;
+        }
+
+        .projects-grid {
+            display: grid;
+            gap: 1.8rem;
+        }
+
+        .project-card {
+            background: linear-gradient(135deg, #f8f8f8, #f0f0f0);
+            border-radius: 10px;
+            padding: 2rem;
+            border-left: 5px solid #ff1744;
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-card::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: -100px;
+            width: 200px;
+            height: 100%;
+            background: rgba(255, 23, 68, 0.05);
+            transition: right 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateX(10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .project-card:hover::after {
+            right: -50px;
+        }
+
+        .project-meta {
+            font-size: 12px;
+            color: #ff1744;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 0.7rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .project-card h4 {
+            font-size: 20px;
+            font-weight: 800;
+            margin-bottom: 0.6rem;
+            color: #000;
+            position: relative;
+            z-index: 1;
+        }
+
+        .project-card p {
+            font-size: 15px;
+            color: #444;
+            line-height: 1.7;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Contact Section */
+        #contact {
+            background: linear-gradient(135deg, #ff1744, #ff3859);
+            color: #fff;
+            padding: 4rem 2rem;
+        }
+
+        #contact h3 {
+            font-size: 48px;
+            font-weight: 900;
+            margin-bottom: 1.2rem;
+            text-align: center;
+        }
+
+        #contact p {
+            font-size: 16px;
+            margin-bottom: 2rem;
+            text-align: center;
+            line-height: 1.7;
+            color: rgba(255, 255, 255, 0.95);
+        }
+
+        .contact-container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 13px;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: none;
+            border-radius: 6px;
+            background: rgba(255, 255, 255, 0.95);
+            color: #000;
+            font-size: 15px;
+            font-family: inherit;
+            transition: all 0.3s;
+        }
+
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            color: #999;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            background: #fff;
+            box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        .submit-btn {
+            width: 100%;
+            background: #fff;
+            color: #ff1744;
+            padding: 13px;
+            border-radius: 6px;
+            font-weight: 800;
+            font-size: 15px;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .submit-btn:hover {
+            background: #f5f5f5;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Footer */
+        footer {
+            background: #000;
+            border-top: 1px solid rgba(255, 23, 68, 0.2);
+            padding: 2.5rem 2rem;
+            text-align: center;
+            color: #666;
+            font-size: 14px;
+        }
+
+        .social-links {
+            margin-bottom: 1.2rem;
+            display: flex;
+            justify-content: center;
+            gap: 1.8rem;
+        }
+
+        .social-links a {
+            color: #ff1744;
+            font-weight: 700;
+            transition: all 0.3s;
+        }
+
+        .social-links a:hover {
+            color: #fff;
+            transform: translateY(-2px);
+        }
+
+        /* Animations */
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            nav {
+                flex-wrap: wrap;
+                gap: 1rem;
+            }
+
+            nav ul {
+                gap: 1rem;
+                font-size: 12px;
+            }
+
+            .hero-container {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .hero-text h2 {
+                font-size: 38px;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+
+            #hero {
+                min-height: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <h1>Ashwin K</h1>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <button class="hire-btn">Download Resume</button>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero">
+        <div class="hero-container">
+            <div class="hero-text">
+                <div class="tagline">Electronics Engineer & AI Developer</div>
+                <h2>Building Smart Systems for Tomorrow</h2>
+                <p class="subtitle">Final-year ECE student with hands-on expertise in VLSI, embedded systems, AI/ML, and RF design. Currently exploring placement opportunities with TCS, HCL, Wipro, and Zoho while deepening technical knowledge.</p>
+                <div class="cta-group">
+                    <button class="btn-primary">View My Work</button>
+                    <button class="btn-secondary">Get in Touch</button>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAYGBgYHBgcICAcKCwoLCg8ODAwODxYQERAREBYiFRkVFRkVIh4kHhweJB42KiYmKjY+NDI0PkxERExfWl98fKcBBgYGBgcGBwgIBwoLCgsKDw4MDA4PFhAREBEQFiIVGRUVGRUiHiQeHB4kHjYqJiYqNj40MjQ+TERETF9aX3x8p//CABEIAyoFoAMBIgACEQEDEQH/xAAwAAEAAwEBAQAAAAAAAAAAAAAAAQIDBAUGAQEBAQEBAAAAAAAAAAAAAAAAAQIDBP/aAAwDAQACEAMQAAAC9gdMgAAAAAASAAAAAAAAAAAAAmIAkAAAAAAKSkAABQAAAAAAAExKQAAAABMSQmKJESAAAAAABz4R3vOhfQz8+TtctY7rcMHZOI6p4eyroEhACYAAAACRCRCRAAAAACSgAAAAAIkQkZDUAAAAAAAkAAAAAAAAQAAAAmBIAAAAUAmJCQAACgAAAAAAAAAgAAAACYkCgAAAEKxZyYr6GXnXN8aeedNeWZdq56EoFq1Gu3JudccsHR0+fJ6uOBO/fy+6t1ZSZgTAAAAJgSAAABAAACVAEAEoEoEoEoEoGY1AAAAEwCRCQAAAAEAAAAAAAAJgSAAAAFAAAACQAASSAAQAAAAmJCQAACgAAAAAAAAAgAAAACYkAAUtBTh38JEZF959x92tjmOzc//AN/z3/8APPP/AP8A/wD/ACCCCCCCSyIA8kAE99BB9hdNNNB99913/DD/wD77Qww+cAN8w3zvvvvvvnq5//wAMOsEEH3muWhwg5I7Jdw2TcN//AP8A7wwww1//APoIb444444ACzDW3HEEFnlKIcf0H/8A/vCOwg0+vHrW+u++++++++CC//AP8A8EFsMEMK5bn3IZZI7kvbeVAV+v8A/wB/y47/AP8Ay++++aO+++++++///j3+2sA19tNBBF519EIBjTH/wD/APsXygTzz/8A/W+qOOyyeu+C/wD+8w1//QQyoz+BDSwJ3ccKQE5IkjZE/wC9+tf/AP8AvvvvvvvssgfffaQQXf8A08MMM8sf/wD/AP8A7OCC2+++eu++/wD/AOM/+sMN/wC+4DAYMJNWt/1Sv6iiHHDzT+5JEcj8wwIAC+++++++++AAwC2++++OAABBBAA088//AIwwwwwwwwwwwwwwwwwwwX//8AoIb4QQyoz/qB/DyQ/sEQQHkSeFx5/i4QwwxZ/DV/z/Bj/sFv/lf4TxMi67FAQhI9L0h++/Pl3//AITZOdexQF+FS/zcKHYcEP/AOuZ/aIVU8PqWqIkJVV/qZl/uZJ/y4ZQQH/RH/wDsj//8QALREAAwEAAgICAQQCAwEBAQEBABExEUFhUXEggZGhscHR8OEw4fFAwAv/2gAIAQEAAT8A/wAV4ePgvDx8F+HhfUcXPwjPIPJUfDCZfJV/QTLmP/CL+sV9rLL+ktLfhEaU2j4vJYb/AN/QsS7bfZvj4f1t5aN+TiL6s0txpyRWJ0fDHxSvwj4S1n/ABHKfAtoQl9oVqXxnYgT4Q5A+xdvDTxrXgAqzGvjS3GjD4fSNMO6b8cBzxuZN5VBv8JY4+C5bTdJjxYvQhh8a5qRqYG/Dj4Sl/Z+DjVT4KdqPj4JYm/PVGdOoEwpW6LjA31qYd6F2+eHh4+FfYKkyVW41Mu6f0L1v8AmNbQg7jfWJyNzCwrfVo3MbGHfuBRbAU3ZhVFzPp5/DzCDyU8/PVyOCsv8RXq0G40dQH0+cD5K/h//LKKrOB8mEvw9p7VQvU0p5+fkFiKXh4TLzP5TPTU5ecKGdFMO1qBg7iVkACoOYu2TIEkp+YzRmSdTnpSdgqV6mpwTgA2u8VthoNW2gAKM6S86OeUpkJSWo7Tl8tpgD8V0v5T4Dn5RQlXA3l5vJZe0hfVvV1Zu/JZpyA0vqVvNIoGy8nA7WuXJ8F1jfgP8A3GqT/P8AVqv8AzXvLVv8AzHfB0xJsLFqGT5F1uu/DVT8IB/DH//jIbTVQcXI2/FyYrCKOk3PQa1uNQzf14hTg5BZxWFCMqKQwqhUQDK7ilJW+YUqKqb1K6v8VXi/h//jC2tNq1ERWlVt8RZwj5pnJtdL++RYV+EZtvyW6i9s+9TyAdG2yK2qkRR+SVdG5siFsGo1OXl7Ve5lMuY5X96V3l83OWiTcHvLNl6j1V/XVXVP/aF6qoV38V5V/H8j//AGiBtVOlTOTgRq+mV1ffquRq1V1V8QYy+CVvn6fHEWLvHpfHzH/AMBCZc+D//GJCGHjvTbhAUxZLbVsQ2FGg5XaVzL6hs5XV8QzfjqYp16i16K/qnWpyF0a2Xj3RqPEbR3TqEH6pVv8AFH//ZR5hVvNnvJ8WB4cT45v8QyvDp+SJJd3HPBd2Lf8APEM4lO9Vro/hUvL48bfniqm61iMljC8gLOQd6bRPuMDiuIe+U+u6j2C1sKv4+YzvuqLlXh8F1YuEFf0H/AKGST38VcVtW4KXQT1fFzr++dDzH+IPwU6mhKjgzzLKVx7Rj4hbN/LtJr1gHXg+i5b8ubv3lNXIqvLm8wxmLfpE/ubEaL9ROzjCX1IvIrXxK+eI+H+S5dzR9Oz8vJxj/2qh8bUKz1vMqE6h9SU8fkH+y5Xc5VsfPvE/A+Yz1LzH+M7UKHCFw8aPjv59Y00M/DpSs1g+ztcLnY9B37yTM1X+Zj3K5i2d6lyVvvqEEy3bxOYQ6uZAHjbKWXg8wT7/HgSc+8TmN5d5Uw7vIRPiEOd9mTeMXSNO2zF1j+AJW6tNBEzBF8L39omZ5Jz4r+I/pZmcVbNqrHpSvfVW+fVhZc/wDzHQXc3u8k5N4mKyvMHdvT7NCSZ5F/9rNKr1+ofzL8wVxDzeCcnS5s9JQKBfJa5W/Tg8pxRvj+kXpS+aCj/wC4o1xNTaRq1Q+T7wZ5fvvJvEuDDmRzvJuDK8lDX+Vc3sWz4gfNa5Ou8Oy7vfVKm/hvqF0f8jL+j+eKYSq/V+9UbuMnB+91Z+tPqrwRq+Iyzls3Dtt2dGYcxhx+4v8YvjfEi9b4vBvKLz1pSTOqQO+HuLOhEYuH3VXNhN2GrJZJGk1SLqNP5X51b+4rvqUwflvLzfwFdbfv9VyhgH8K50vOxfVVvNlNx8xbzqW3I5fNa37vMH9V8EHtSrDhqFJXZy9xA1u8EyaJGzrJ2J2qc3iBOBz0txTD5P4FqqW5xX4VvJa3mPzfSGn/PXpNfqYvhAv45a+I+KeP/tBvP8/V+6D++WoHvKFGXf/AAG1cXfg1/8ARk9Q6TxUHbhFNGrWPvW/p7WvfWn//2Q==" alt="Ashwin K">
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <h3>About Me</h3>
+            <p>I'm an Electronics & Communication Engineering student at Sethu Institute of Technology with a CGPA of 8.3. My passion lies in transforming complex technical challenges into elegant, practical solutions. I blend theoretical knowledge with hands-on innovation, working across VLSI design, embedded systems, AI/ML applications, and RF engineering.</p>
+            <p>Currently in my final year and actively engaging with the placement process, I continue expanding my technical expertise. My projects showcase real-world problem-solving—from AI-powered attendance systems to IoT solutions and advanced RF antenna design using ANSYS HFSS. I believe great engineering comes from combining deep technical understanding with creative thinking.</p>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <h4>8.3</h4>
+                    <p>CGPA</p>
+                </div>
+                <div class="stat-card">
+                    <h4>8+</h4>
+                    <p>Projects</p>
+                </div>
+                <div class="stat-card">
+                    <h4>15+</h4>
+                    <p>Skills</p>
+                </div>
+                <div class="stat-card">
+                    <h4>2026</h4>
+                    <p>Graduating</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills">
+        <div class="container">
+            <h3>Tech Stack & Expertise</h3>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <h4>VLSI & Electronics</h4>
+                    <p>MOSFET Design • CMOS Logic • Analog Circuits • Verilog HDL • Xilinx ISE • Circuit Simulation • Signal Processing • Device Physics</p>
+                </div>
+                <div class="skill-card">
+                    <h4>Software & AI/ML</h4>
+                    <p>Python • Java • C Programming • OpenCV • Face Recognition • Machine Learning • Neural Networks • TensorFlow • MATLAB</p>
+                </div>
+                <div class="skill-card">
+                    <h4>RF & Communications</h4>
+                    <p>Antenna Design • 5G Technology • MIMO Systems • ANSYS HFSS • Wireless Networks • Signal Processing • S-Parameter Analysis</p>
+                </div>
+                <div class="skill-card">
+                    <h4>IoT & Embedded Systems</h4>
+                    <p>Embedded Systems • IoT Implementation • Real-time Monitoring • SCADA Systems • Microcontroller Programming • Sensor Integration</p>
+                </div>
+                <div class="skill-card">
+                    <h4>Development Tools</h4>
+                    <p>Web Development • Git & GitHub • Linux • Database Design • Problem Solving • Leadership • Time Management • Innovation</p>
+                </div>
+                <div class="skill-card">
+                    <h4>Certifications</h4>
+                    <p>AI Technologies (InternSpot 2025) • Big Data Analytics (NIT Trichy 2024) • Digital Image Processing (SIT 2024) • Robotics & IoT (Zetspire 2023)</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+        <div class="container">
+            <h3>Featured Projects & Internships</h3>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-meta">Python • OpenCV • AI/ML • GitHub</div>
+                    <h4>Smart Attendance System - Face Recognition</h4>
+                    <p>Built an AI-powered attendance system using Python, OpenCV, and face recognition libraries. Automatically marks attendance by identifying students from a live camera feed. Stores records in CSV format with clean UI for real-time monitoring. AICTE certified via InternSpot. Achieves 95%+ accuracy in multi-angle detection.</p>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-meta">IoT • Python • Real-time Monitoring • MSME</div>
+                    <h4>CowTrack - IoT-Based Cattle Monitoring System</h4>
+                    <p>Developed a real-time IoT solution to monitor methane levels in dairy cows for promoting gut health and supporting low-carbon milk production. Integrates sensor data processing with cloud connectivity. Reached MSME final round. Demonstrates end-to-end IoT system design and deployment expertise.</p>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-meta">Embedded • Automation • Agriculture • Real-time</div>
+                    <h4>SacreBot - Automated Agriculture Assistance Bot</h4>
+                    <p>Built an embedded-logic bot to drive away stray animals from agricultural crops. Integrated real-time environment data tracking for enhanced farm monitoring. Combines embedded systems with practical agricultural automation solutions.</p>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-meta">RF Design • ANSYS HFSS • 5G • Simulation</div>
+                    <h4>Reconfigurable Ground-Penetrable MIMO Antenna</h4>
+                    <p>Designing and simulating a reconfigurable MIMO antenna using ANSYS HFSS. Analyzing S-parameters, radiation patterns, gain, and return loss through electromagnetic simulation. Published research in IEEE journal. Demonstrates advanced RF design and theoretical knowledge.</p>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-meta">Java • Swing • E-commerce • Database</div>
+                    <h4>BikeParts Pro - E-Commerce Platform</h4>
+                    <p>Built a comprehensive e-commerce platform using Java Swing with complete inventory management system. Features real-time stock tracking, order processing, and user-friendly interface design. Demonstrates full-stack development capabilities.</p>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-meta">SCADA • AI • Power Systems • Monitoring</div>
+                    <h4>AI-Integrated SCADA System for Power Grid</h4>
+                    <p>Developed an intelligent supervisory control and data acquisition system for real-time power grid monitoring and anomaly detection. Reduces response time by 40% and improves fault prediction accuracy. Combines systems engineering with AI/ML applications.</p>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-meta">Python • AI • Certificate • 12 Weeks</div>
+                    <h4>AI Technologies Internship - InternSpot</h4>
+                    <p>Completed comprehensive 12-week program covering AI algorithms, machine learning foundations, and advanced Python. Awarded completion certificate. Gained practical experience in AI model development and implementation.</p>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-meta">IoT • Hardware • Sensors • Microcontrollers</div>
+                    <h4>IoT Implementation Internship - Zetspire Technology</h4>
+                    <p>5-day intensive hands-on internship in IoT implementation and device communication. Worked with sensors, microcontrollers, and real-time data tracking systems. Practical experience in IoT hardware and protocol integration.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="contact-container">
+            <h3>Let's Collaborate</h3>
+            <p>Have an exciting opportunity, project idea, or want to discuss electronics and AI? I'm always open to new challenges and collaborations. Reach out through the form or connect on my social profiles.</p>
+            <form onsubmit="handleSubmit(event)">
+                <div class="form-group">
+                    <label>Your Name</label>
+                    <input type="text" placeholder="Full Name" required>
+                </div>
+                <div class="form-group">
+                    <label>Email Address</label>
+                    <input type="email" placeholder="your@email.com" required>
+                </div>
+                <div class="form-group">
+                    <label>Message</label>
+                    <textarea placeholder="Tell me about your opportunity or project idea..." required></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="social-links">
+            <a href="https://linkedin.com/in/ashwin-k-860533299" target="_blank">LinkedIn</a>
+            <a href="https://github.com" target="_blank">GitHub</a>
+            <a href="mailto:ashwin220905@gmail.com">Email</a>
+        </div>
+        <p>+91 9360788534 | Madurai, Tamil Nadu, India</p>
+        <p>© 2026 Ashwin K. Electronics Engineer | VLSI Enthusiast | AI Builder</p>
+    </footer>
+
+    <script>
+        function handleSubmit(e) {
+            e.preventDefault();
+            alert('Thank you! I will get back to you soon.');
+            e.target.reset();
+        }
+
+        // Smooth scroll navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
